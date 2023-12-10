@@ -37,6 +37,16 @@ export default function App() {
 		   enemiesData objects, resulting in 3 different enemies in three different positions in the castle. When you click the "Play" button, they should start walking back and forth!
 		   
 */
+	const enemiesElement = enemiesData.map((enemy)=>{
+		return(
+			<Enemy 
+				key={enemy.id}
+				currentImage={enemy.currentImage} 
+				position={enemy.position} 
+				orientation={enemy.orientation}
+			/>
+		)
+	})
 	
 	return (
 		<div className="wrapper">
@@ -44,7 +54,8 @@ export default function App() {
 				<div className="castle-container">
 					
 				{/*------Your Enemy elements below!------*/}
-
+				
+					{enemiesElement}
 					
 				{/*------Your Enemy elements above!------*/}
 				
